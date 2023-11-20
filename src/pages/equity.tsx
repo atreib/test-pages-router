@@ -1,8 +1,17 @@
 import { GetServerSideProps } from "next";
 import * as React from "react";
+import { NextSeo } from "next-seo";
 
 function DashboardEquity({ dummy }: { dummy: boolean }) {
-  return <>server side props: {dummy.toString()}</>;
+  return (
+    <>
+      <NextSeo
+        title="Simple Usage Example"
+        description="A short description goes here."
+      />
+      server side props: {dummy.toString()}
+    </>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
